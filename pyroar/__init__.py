@@ -71,7 +71,7 @@ class PSBot():
             account = getAccount(newname)
             message = Message(messagetxt, author=account)
             await self.events['on_pm'].func(self, message)
-    async def on_chat(self, username, messagetxt, roomid, msgid):
+    async def on_chat(self, username, messagetxt, roomid, ts):
         if 'on_chat' in self.events.keys():
             newname = ''
             for i in username[1:]:
@@ -79,7 +79,7 @@ class PSBot():
                     newname += i.lower()
             account = getAccount(newname)
             rank = username[0]
-            message = Message(messagetxt, account, roomid, msgid)
+            message = Message(messagetxt, account, roomid, ts)
             await self.events['on_chat'].func(self, message, rank)
 
     #not sure what to call these

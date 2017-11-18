@@ -46,12 +46,12 @@ class User(Account):
         self.global_rank = cmddict['group']
 
 class Message():
-    def __init__(self, text, author=None, roomid=None, msgid=None):
+    def __init__(self, text, author=None, roomid=None, timestamp=None):
         self.text = text
         self.author = author
-        self.room = Room(roomid)
-        if msgid != None:
-            self.msgid = msgid
+        if roomid != None:
+            self.room = Room(roomid)
+        self.timestamp = timestamp
             
 class Event():
     def __init__(self, eventid, func):
