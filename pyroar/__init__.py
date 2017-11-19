@@ -81,6 +81,16 @@ class PSBot():
             rank = username[0]
             message = Message(messagetxt, account, roomid, ts)
             await self.events['on_chat'].func(self, message, rank)
+    async def on_message_find(self, username, msgtxt, roomid, ts):
+        if 'on_message_find' in self.events.keys():
+            newname = ''
+            for i in username[1:]:
+                if i.lower() in list('qwertyuiopasdfghjklzxcvbnm1234567890'):
+                    newname += i.lower()
+            account = getAccount(newname)
+            rank = username[0]
+            message = Message(msgtxt, account, roomid, ts)
+            await self.events['on_message_find'].func(self, message, rank)
 
     #not sure what to call these
     async def getUser(self, account):

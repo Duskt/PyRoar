@@ -79,6 +79,7 @@ async def handle(bot, info):
             msgtxt = piece[3]
             room = i.room[1:]
             ts = piece[1]
+            bot.loop.create_task(bot.on_message_find(author, msgtxt, room, ts))
             if int(piece[1]) > int(bot.creation_stamp[i.room[1:]]):
                 bot.loop.create_task(bot.on_chat(author, msgtxt, room, ts))
             
