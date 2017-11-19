@@ -31,3 +31,6 @@ async def on_ready(bot, account):
 #connect to the account
 bot.connect(me, password="ENTERPASSWORD")
 ```
+
+## Contribution
+Contribution is very much appreciated! The code is unfinished and very messy so currently it is difficult to do so, but suggestions are helpful, as is any further documentation in the wiki or issue reports.
