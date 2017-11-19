@@ -34,8 +34,8 @@ class PSBot():
         await asyncio.sleep(0.05)
         r = await self.ws.send_str(message)
         return r
-    def connect(self, account):
-        self.account = account
+    def connect(self, account, password):
+        self.account = getAccount(account.username, _pass=password)
         self.loop = asyncio.get_event_loop()
         self.loop.run_until_complete(run(self))
 

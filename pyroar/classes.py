@@ -5,7 +5,7 @@ class Room():
         self.roomid = roomid
 
 class Account():
-    def __init__(self, username):
+    def __init__(self, username, **kwargs):
         if username.lower() != username:
             raise CreationError('Username cannot be a nickname.')
         else:
@@ -15,6 +15,8 @@ class Account():
                     break
             else:
                 self.username = username
+        for kw in kwargs:
+            setattr(self, kw, kwargs[kw])
 
 class LoginAccount():
     def __init__(self, username, password):

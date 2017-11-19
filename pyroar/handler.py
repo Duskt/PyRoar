@@ -1,5 +1,6 @@
 import aiohttp, json, re, asyncio
 import pyroar.utils
+from pyroar.functions import *
 
 class FormInfo():
     def __init__(self, raw):
@@ -43,8 +44,10 @@ async def handle(bot, info):
             bot.loop.create_task(bot.on_connect())
             user = bot.account.username
             resp = await pyroar.utils.login(user,
-                                     bot.account.password,
+                                     bot.account._pass,
                                      '|'.join(piece[1:3]))
+            bot.account._pass = None
+            bot.account = getAccount(bot.account.username)
             if resp is None:
                 raise Exception('Unable to login.')
             else:
