@@ -1,7 +1,7 @@
 import pyroar, asyncio
 
 bot = pyroar.PSBot()
-account = pyroar.getAccount('USERNAME')
+account = pyroar.getAccount('username')
 
 @bot.event
 async def on_connect(bot):
@@ -12,8 +12,8 @@ async def on_ready(bot, account):
     print('Ready!')
 
 @bot.event
-async def on_pm(bot, message):                           
-    #echoes back to author
-    await bot.message(message.text, message.author)
+async def on_pm(bot, message):
+    if message.author.username != bot.account.username:
+        await bot.message(message.text, message.author)
 
-bot.connect(account, password='ENTERPASSWORD')
+bot.connect(account, password='password')
