@@ -20,7 +20,7 @@ import pyroar, asyncio
 bot = pyroar.PSBot()
 
 #create your account
-me = pyroar.getAccount("MY_NAME", password="PASSWORD")
+me = pyroar.getAccount("MY_NAME")
 
 #@bot.event is a decorator which lets the bot know it's an event
 #on_ready is called when the bot logs in to its account. See events for more information
@@ -29,5 +29,8 @@ async def on_ready(bot, account):
     print('Ready!')
     
 #connect to the account
-bot.connect(me)
+bot.connect(me, password="ENTERPASSWORD")
 ```
+
+## Contribution
+Contribution is very much appreciated! The code is unfinished and very messy so currently it is difficult to do so, but suggestions are helpful, as is any further documentation in the wiki or issue reports.
