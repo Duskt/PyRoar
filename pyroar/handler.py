@@ -72,14 +72,14 @@ async def handle(bot, info):
             bot.loop.create_task(bot.on_pm(username, message))
 
         elif key == ':':
-            bot.creation_stamp = piece[1]
+            bot.creation_stamp[i.room[1:]] = piece[1]
 
         elif key == 'c:':
             author = piece[2]
             msgtxt = piece[3]
             room = i.room[1:]
             ts = piece[1]
-            if int(piece[1]) > int(bot.creation_stamp):
+            if int(piece[1]) > int(bot.creation_stamp[i.room[1:]]):
                 bot.loop.create_task(bot.on_chat(author, msgtxt, room, ts))
             
 

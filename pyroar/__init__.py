@@ -19,7 +19,7 @@ class PSBot():
         self.connected = False
         self.account = None
         #inner attributes
-        self.creation_stamp = '0'
+        self.creation_stamp = dict()
         self.server = server
         self.note_cond = False
         self.events = dict()
