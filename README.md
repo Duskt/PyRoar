@@ -33,4 +33,4 @@ bot.connect(me, password="ENTERPASSWORD")
 ```
 
 ## Contribution
-Contribution is very much appreciated! The code is unfinished and very messy so currently it is difficult to do so, but suggestions are helpful, as is any further documentation in the wiki or issue reports.
+A fairly large update is coming soon, but after that it would be much appreciated.
