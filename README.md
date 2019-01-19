@@ -33,4 +33,4 @@ bot.connect(me, password="ENTERPASSWORD")
 ```
 
 ## Contribution
-A fairly large update is coming soon, but after that it would be much appreciated.
+lol
