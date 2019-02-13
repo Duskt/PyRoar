@@ -31,6 +31,3 @@ async def on_ready(bot, account):
 #connect to the account
 bot.connect(me, password="ENTERPASSWORD")
 ```
-
-## Contribution
-lol
